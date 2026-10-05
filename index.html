@@ -221,8 +221,27 @@ img{max-width:100%;display:block}
   .detail__side{position:static}
 }
 @media (max-width:768px){
-  .nav{position:fixed;top:78px;left:0;right:0;background:var(--white);padding:24px;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:var(--transition);box-shadow:var(--shadow)}
-  .nav.open{transform:translateY(0)}
+  .nav{
+    position:fixed;
+    top:78px; left:0; right:0;
+    background:var(--white);
+    padding:24px;
+    border-bottom:1px solid var(--line);
+    transform:translateY(-120%);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:transform .3s ease, opacity .3s ease, visibility .3s;
+    box-shadow:var(--shadow);
+    max-height:calc(100vh - 78px);
+    overflow-y:auto;
+  }
+  .nav.open{
+    transform:translateY(0);
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
   .nav ul{flex-direction:column;gap:18px}
   .header__cta{display:none}
   .burger{display:flex}
@@ -486,7 +505,9 @@ const REALISATIONS = [
 // ---------- HELPERS ----------
 const $ = (s, ctx=document) => ctx.querySelector(s);
 const $$ = (s, ctx=document) => [...ctx.querySelectorAll(s)];
-const escapeHTML = (s='') => s.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const escapeHTML = (s) => String(s ?? '').replace(/[&<>"']/g, c =>
+  ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])
+);
 
 // ---------- TEMPLATES ----------
 const SERVICES_CARDS = (limit) => {
@@ -962,10 +983,6 @@ function bindContactForm(){
     // TODO: brancher Formspree / Web3Forms / Firebase ici
     console.log('Nouvelle demande :', data);
 
-    // Option bonus : ouvrir WhatsApp avec le message prérempli
-    // const msg = encodeURIComponent(`Bonjour Mahmar Group, je suis ${data.name}. Service : ${data.subject}. ${data.message}`);
-    // window.open(`https://wa.me/22661040464?text=${msg}`, '_blank');
-
     status.textContent = "Merci ! Votre demande a bien été envoyée. Nous vous répondrons rapidement.";
     status.className = "form-status success";
     form.reset();
@@ -999,7 +1016,6 @@ const nav = document.getElementById('nav');
 burger.addEventListener('click', () => nav.classList.toggle('open'));
 
 window.addEventListener('hashchange', router);
-window.addEventListener('DOMContentLoaded', router);
 router();
 </script>
 
