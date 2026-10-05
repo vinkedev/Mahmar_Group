@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mahmar Group — Communication, Formation & Événementiel</title>
+<meta name="description" content="Mahmar Group accompagne les institutions, organisations et particuliers dans la réalisation de leurs projets professionnels et communicationnels." />
+<meta property="og:title" content="Mahmar Group" />
+<meta property="og:description" content="Formations, impression, production vidéo, photographie et événementiel." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================
+   MAHMAR GROUP — Styles
+   Orange #EA6B31 · Bleu nuit #2C2250
+   ========================================= */
+:root{
+  --orange:#EA6B31; --orange-dark:#c9551f;
+  --navy:#2C2250; --navy-dark:#1e1740; --navy-light:#3d3168;
+  --white:#fff; --off-white:#f7f6fb; --gray:#6b6880; --line:#e6e4ee;
+  --radius:14px; --radius-lg:22px;
+  --shadow:0 10px 30px rgba(44,34,80,.08);
+  --shadow-lg:0 20px 60px rgba(44,34,80,.15);
+  --transition:.25s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--navy);background:var(--white);line-height:1.6;font-size:16px}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.15;color:var(--navy);letter-spacing:-.02em}
+h1{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800}
+h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:600}
+p{color:var(--gray)}
+a{color:inherit;text-decoration:none;transition:var(--transition)}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+.text-orange{color:var(--orange)}
+.hidden{display:none !important}
+
+/* ---------- Boutons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:var(--transition);font-family:'Inter',sans-serif}
+.btn--primary{background:var(--orange);color:var(--white);box-shadow:0 8px 20px rgba(234,107,49,.3)}
+.btn--primary:hover{background:var(--orange-dark);transform:translateY(-2px);box-shadow:0 12px 26px rgba(234,107,49,.4)}
+.btn--ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn--ghost:hover{background:var(--navy);color:var(--white)}
+.btn--full{width:100%}
+.btn--sm{padding:11px 20px;font-size:.85rem}
+.link-arrow{display:inline-block;color:var(--orange);font-weight:600;font-size:.9rem;margin-top:16px}
+.link-arrow:hover{transform:translateX(4px)}
+
+/* ---------- Header ---------- */
+.header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);z-index:1000;border-bottom:1px solid transparent;transition:var(--transition)}
+.header.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(44,34,80,.06)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;height:78px;gap:24px}
+.logo{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;display:inline-flex;gap:4px}
+.logo__mahmar{color:var(--orange)}
+.logo__group{color:var(--navy)}
+.logo--light .logo__group{color:var(--white)}
+.nav ul{display:flex;gap:32px;list-style:none}
+.nav a{font-size:.92rem;font-weight:500;color:var(--navy);position:relative;cursor:pointer}
+.nav a:hover,.nav a.active{color:var(--orange)}
+.nav a.active::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--orange);border-radius:2px}
+.header__cta{padding:11px 22px;font-size:.88rem}
+.burger{display:none;background:none;border:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:var(--transition)}
+
+/* ---------- Hero ---------- */
+.hero{padding:160px 0 100px;background:radial-gradient(circle at 80% 20%,rgba(234,107,49,.12),transparent 45%),radial-gradient(circle at 10% 90%,rgba(44,34,80,.08),transparent 45%),var(--off-white);position:relative;overflow:hidden}
+.hero__inner{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.badge{display:inline-block;padding:6px 14px;background:rgba(234,107,49,.1);color:var(--orange);font-size:.8rem;font-weight:600;border-radius:999px;margin-bottom:22px}
+.hero h1{margin-bottom:20px}
+.hero p{font-size:1.05rem;max-width:540px;margin-bottom:32px}
+.hero__actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:50px}
+.hero__stats{display:flex;gap:40px;list-style:none;padding-top:32px;border-top:1px solid var(--line)}
+.hero__stats li{display:flex;flex-direction:column}
+.hero__stats strong{font-family:'Poppins',sans-serif;font-size:1.8rem;color:var(--navy);font-weight:700}
+.hero__stats span{font-size:.85rem;color:var(--gray)}
+.hero__visual{position:relative}
+.hero__card{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.hero__card::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:var(--orange);border-radius:50%;opacity:.15}
+.hero__card-badge{display:inline-block;padding:5px 12px;background:var(--orange);color:var(--white);font-size:.75rem;font-weight:600;border-radius:999px;margin-bottom:20px}
+.hero__card h3{color:var(--white);font-size:1.6rem;margin-bottom:14px}
+.hero__card p{color:rgba(255,255,255,.75)}
+
+/* ---------- Sections ---------- */
+.section{padding:100px 0}
+.section--alt{background:var(--off-white)}
+.section__head{text-align:center;max-width:680px;margin:0 auto 60px}
+.eyebrow{display:inline-block;color:var(--orange);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.section__head h2{margin-bottom:16px}
+
+/* ---------- Page banner (pour les pages internes) ---------- */
+.page-hero{padding:150px 0 60px;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;background:var(--orange);border-radius:50%;opacity:.12}
+.page-hero::after{content:'';position:absolute;bottom:-120px;left:-60px;width:280px;height:280px;background:var(--orange);border-radius:50%;opacity:.08}
+.page-hero h1{color:var(--white);margin-bottom:14px;position:relative;z-index:1}
+.page-hero p{color:rgba(255,255,255,.75);max-width:640px;margin:0 auto;position:relative;z-index:1}
+.breadcrumb{font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:14px;position:relative;z-index:1}
+.breadcrumb a{color:var(--orange)}
+.breadcrumb a:hover{text-decoration:underline}
+
+/* ---------- About ---------- */
+.about__inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about__visual{position:relative}
+.about__visual img{border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover;width:100%}
+.about__floating{position:absolute;bottom:-20px;right:-20px;background:var(--white);padding:20px 24px;border-radius:var(--radius);box-shadow:var(--shadow-lg);border-left:4px solid var(--orange)}
+.about__floating strong{display:block;font-family:'Poppins',sans-serif;color:var(--navy);font-size:1.1rem}
+.about__floating span{font-size:.82rem;color:var(--gray)}
+.about__content h2{margin:12px 0 20px}
+.about__content p{margin-bottom:16px}
+.about__values{list-style:none;margin-top:32px;display:grid;gap:14px}
+.about__values li{display:flex;align-items:center;gap:14px;font-weight:500;color:var(--navy)}
+.about__values span{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:rgba(234,107,49,.1);color:var(--orange);border-radius:50%;font-size:.8rem;font-weight:700}
+
+/* ---------- Services ---------- */
+.services__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:var(--white);border-radius:var(--radius-lg);padding:32px;position:relative;box-shadow:var(--shadow);transition:var(--transition);display:flex;flex-direction:column;border:1px solid transparent}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(234,107,49,.25)}
+.service-card__num{position:absolute;top:24px;right:28px;font-family:'Poppins',sans-serif;font-size:1.4rem;font-weight:700;color:var(--line)}
+.service-card__icon{font-size:2rem;margin-bottom:18px;width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:rgba(234,107,49,.1);border-radius:14px}
+.service-card h3{margin-bottom:12px}
+.service-card > p{font-size:.92rem;margin-bottom:16px}
+.service-card ul{list-style:none;margin-bottom:20px;margin-top:auto}
+.service-card ul li{font-size:.85rem;color:var(--gray);padding-left:18px;position:relative;margin-bottom:6px}
+.service-card ul li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;background:var(--orange);border-radius:50%}
+.service-card--cta{background:linear-gradient(135deg,var(--navy),var(--navy-light));color:var(--white);justify-content:center;text-align:center}
+.service-card--cta h3{color:var(--white);font-size:1.4rem;margin-bottom:12px}
+.service-card--cta p{color:rgba(255,255,255,.75);margin-bottom:24px}
+
+/* ---------- Formations ---------- */
+.formations__filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.filter{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--white);color:var(--navy);font-size:.85rem;font-weight:500;cursor:pointer;transition:var(--transition);font-family:'Inter',sans-serif}
+.filter:hover{border-color:var(--orange);color:var(--orange)}
+.filter.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.formations__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.formation-card{background:var(--white);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);transition:var(--transition);display:flex;flex-direction:column}
+.formation-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.formation-card__head{padding:24px 24px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.status{font-size:.72rem;font-weight:600;padding:5px 12px;border-radius:999px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.status--ouverte{background:rgba(34,197,94,.12);color:#16a34a}
+.status--avenir{background:rgba(234,107,49,.12);color:var(--orange)}
+.status--encours{background:rgba(44,34,80,.1);color:var(--navy)}
+.status--terminee{background:rgba(107,104,128,.12);color:var(--gray)}
+.formation-card__domain{font-size:.78rem;color:var(--gray);font-weight:500}
+.formation-card__body{padding:16px 24px 24px;flex:1;display:flex;flex-direction:column}
+.formation-card h3{font-size:1.1rem;margin-bottom:12px}
+.formation-card__meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px;font-size:.82rem;color:var(--gray)}
+.formation-card__meta span{display:inline-flex;align-items:center;gap:6px}
+.formation-card p{font-size:.88rem;margin-bottom:20px}
+.formation-card .btn{margin-top:auto;align-self:flex-start}
+.empty-msg{grid-column:1/-1;text-align:center;color:var(--gray);padding:40px 0}
+
+/* ---------- Formation détail ---------- */
+.detail__grid{display:grid;grid-template-columns:1.6fr 1fr;gap:50px;align-items:flex-start}
+.detail__content h2{margin-bottom:20px}
+.detail__content h3{margin:28px 0 12px;font-size:1.15rem}
+.detail__content p{margin-bottom:14px}
+.detail__content ul{list-style:none;display:grid;gap:10px}
+.detail__content ul li{padding-left:24px;position:relative;color:var(--gray);font-size:.95rem}
+.detail__content ul li::before{content:'✓';position:absolute;left:0;top:0;color:var(--orange);font-weight:700}
+.detail__side{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:32px;position:sticky;top:100px;border:1px solid var(--line)}
+.detail__side h4{font-size:1rem;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.detail__side .meta-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.detail__side .meta-row:last-of-type{border-bottom:none;margin-bottom:20px}
+.detail__side .meta-row span:first-child{color:var(--gray)}
+.detail__side .meta-row span:last-child{color:var(--navy);font-weight:600;text-align:right}
+
+/* ---------- Réalisations ---------- */
+.realisations__filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.realisations__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.realisation-card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3;cursor:pointer;transition:var(--transition)}
+.realisation-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.realisation-card img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}
+.realisation-card:hover img{transform:scale(1.08)}
+.realisation-card__overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(44,34,80,.9),transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;color:var(--white)}
+.realisation-card__cat{font-size:.72rem;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.realisation-card__overlay h3{color:var(--white);font-size:1.05rem}
+
+/* ---------- Contact ---------- */
+.contact__inner{display:grid;grid-template-columns:1fr 1.1fr;gap:60px}
+.contact__info h2{margin:12px 0 16px}
+.contact__info > p{margin-bottom:36px}
+.contact__list{list-style:none;display:grid;gap:22px}
+.contact__list li{display:flex;gap:16px;align-items:flex-start}
+.contact__list .ico{flex-shrink:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:var(--white);border-radius:12px;box-shadow:var(--shadow);font-size:1.1rem}
+.contact__list strong{display:block;font-size:.85rem;color:var(--navy);margin-bottom:2px}
+.contact__list a{font-size:.92rem;color:var(--gray)}
+.contact__list a:hover{color:var(--orange)}
+.contact__form{background:var(--white);padding:40px;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);display:grid;gap:18px;border:1px solid var(--line)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.82rem;font-weight:600;color:var(--navy)}
+.field input,.field select,.field textarea{padding:13px 16px;border:1px solid var(--line);border-radius:10px;font-family:'Inter',sans-serif;font-size:.92rem;color:var(--navy);background:var(--off-white);transition:var(--transition);resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);background:var(--white);box-shadow:0 0 0 3px rgba(234,107,49,.12)}
+.form-status{font-size:.85rem;text-align:center;margin-top:4px}
+.form-status.success{color:#16a34a}
+.form-status.error{color:#dc2626}
+
+/* ---------- Footer ---------- */
+.footer{background:var(--navy-dark);color:rgba(255,255,255,.7);padding:70px 0 0}
+.footer__inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:50px}
+.footer h4{color:var(--white);font-size:.95rem;margin-bottom:18px}
+.footer p{color:rgba(255,255,255,.6);font-size:.9rem;margin-top:16px}
+.footer ul{list-style:none;display:grid;gap:10px}
+.footer a,.footer li{font-size:.88rem;color:rgba(255,255,255,.65);cursor:pointer}
+.footer a:hover{color:var(--orange)}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;text-align:center;font-size:.82rem}
+
+/* ---------- WhatsApp float ---------- */
+.whatsapp-float{position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 8px 24px rgba(37,211,102,.4);z-index:999;transition:var(--transition)}
+.whatsapp-float:hover{transform:scale(1.08)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .hero__inner,.about__inner,.contact__inner,.detail__grid{grid-template-columns:1fr;gap:40px}
+  .services__grid,.formations__grid,.realisations__grid{grid-template-columns:repeat(2,1fr)}
+  .footer__inner{grid-template-columns:1fr 1fr}
+  .detail__side{position:static}
+}
+@media (max-width:768px){
+  .nav{position:fixed;top:78px;left:0;right:0;background:var(--white);padding:24px;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:var(--transition);box-shadow:var(--shadow)}
+  .nav.open{transform:translateY(0)}
+  .nav ul{flex-direction:column;gap:18px}
+  .header__cta{display:none}
+  .burger{display:flex}
+  .services__grid,.formations__grid,.realisations__grid{grid-template-columns:1fr}
+  .footer__inner{grid-template-columns:1fr}
+  .section{padding:70px 0}
+  .hero{padding:130px 0 70px}
+  .hero__stats{gap:24px;flex-wrap:wrap}
+  .contact__form{padding:28px}
+  .about__floating{right:12px;bottom:-16px}
+  .page-hero{padding:120px 0 50px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="logo" data-nav="accueil" href="#/">
+      <span class="logo__mahmar">MAHMAR</span><span class="logo__group">Group</span>
+    </a>
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a data-nav="accueil" href="#/">Accueil</a></li>
+        <li><a data-nav="apropos" href="#/a-propos">À propos</a></li>
+        <li><a data-nav="services" href="#/services">Services</a></li>
+        <li><a data-nav="formations" href="#/formations">Formations</a></li>
+        <li><a data-nav="realisations" href="#/realisations">Réalisations</a></li>
+        <li><a data-nav="contact" href="#/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#/contact" class="btn btn--primary header__cta">Demander un devis</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ MAIN ============ -->
+<main id="app"></main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <div class="logo logo--light"><span class="logo__mahmar">MAHMAR</span><span class="logo__group">Group</span></div>
+      <p>Accompagner les institutions vers l'excellence communicationnelle.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#/">Accueil</a></li>
+        <li><a href="#/a-propos">À propos</a></li>
+        <li><a href="#/services">Services</a></li>
+        <li><a href="#/formations">Formations</a></li>
+        <li><a href="#/realisations">Réalisations</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#/services">Formations</a></li>
+        <li><a href="#/services">Impression</a></li>
+        <li><a href="#/services">Production vidéo</a></li>
+        <li><a href="#/services">Photographie</a></li>
+        <li><a href="#/services">Événementiel</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+22661040464">+226 61 04 04 64</a></li>
+        <li><a href="tel:54851931">54 85 19 31</a></li>
+        <li><a href="mailto:mahmargroup@gmail.com">mahmargroup@gmail.com</a></li>
+        <li>Burkina Faso</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© <span id="year"></span> Mahmar Group. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/22661040464" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+/* =========================================
+   MAHMAR GROUP — Application JS
+   Router + rendu + interactions
+   ========================================= */
+
+// ---------- DATA ----------
+const FORMATIONS = [
+  {
+    id: 1,
+    title: "Communication digitale & réseaux sociaux",
+    domain: "Communication",
+    status: "ouverte", statusLabel: "Inscriptions ouvertes",
+    date: "À définir", duration: "5 jours", location: "Ouagadougou",
+    price: "Sur demande",
+    trainer: "Équipe Mahmar Group",
+    audience: "Chargés de communication, community managers, responsables institutionnels",
+    description: "Maîtrisez les stratégies de contenu, la gestion de communauté et les outils d'analyse pour booster votre présence en ligne.",
+    objectives: [
+      "Comprendre les fondamentaux du digital et des réseaux sociaux",
+      "Construire une ligne éditoriale cohérente",
+      "Créer et planifier du contenu engageant",
+      "Mesurer la performance de ses actions digitales"
+    ],
+    program: [
+      "Module 1 — Panorama du digital et enjeux actuels",
+      "Module 2 — Stratégie de contenu et ligne éditoriale",
+      "Module 3 — Gestion de communauté et modération",
+      "Module 4 — Publicité en ligne et ciblage",
+      "Module 5 — Analyse et reporting"
+    ]
+  },
+  {
+    id: 2,
+    title: "Leadership & management d'équipe",
+    domain: "Développement personnel",
+    status: "avenir", statusLabel: "À venir",
+    date: "Session 2026", duration: "3 jours", location: "Présentiel",
+    price: "Sur demande",
+    trainer: "Équipe Mahmar Group",
+    audience: "Managers, chefs de service, responsables d'équipe",
+    description: "Développez vos compétences de leader : motivation, délégation, gestion de conflits et communication interne.",
+    objectives: [
+      "Identifier son style de leadership",
+      "Motiver et fédérer une équipe",
+      "Gérer les conflits avec méthode",
+      "Déléguer efficacement"
+    ],
+    program: [
+      "Module 1 — Les styles de leadership",
+      "Module 2 — Communication interpersonnelle",
+      "Module 3 — Motivation et engagement",
+      "Module 4 — Gestion des conflits",
+      "Module 5 — Délégation et prise de décision"
+    ]
+  },
+  {
+    id: 3,
+    title: "Production vidéo pour institutions",
+    domain: "Audiovisuel",
+    status: "ouverte", statusLabel: "Inscriptions ouvertes",
+    date: "À définir", duration: "7 jours", location: "Ouagadougou",
+    price: "Sur demande",
+    trainer: "Équipe Mahmar Group",
+    audience: "Chargés de production, journalistes, communicants",
+    description: "De l'écriture au montage : réalisez des capsules professionnelles pour vos campagnes de communication.",
+    objectives: [
+      "Écrire un scénario et un storyboard",
+      "Maîtriser les bases du cadrage et de la lumière",
+      "Enregistrer un son de qualité",
+      "Monter et exporter une vidéo finale"
+    ],
+    program: [
+      "Module 1 — Écriture et storyboard",
+      "Module 2 — Cadrage et lumière",
+      "Module 3 — Prise de son",
+      "Module 4 — Tournage en conditions réelles",
+      "Module 5 — Montage et post-production",
+      "Module 6 — Diffusion et formats"
+    ]
+  },
+  {
+    id: 4,
+    title: "Photographie institutionnelle",
+    domain: "Image",
+    status: "avenir", statusLabel: "À venir",
+    date: "Session 2026", duration: "4 jours", location: "Présentiel",
+    price: "Sur demande",
+    trainer: "Équipe Mahmar Group",
+    audience: "Photographes, communicants, chargés de documentation",
+    description: "Cadrage, lumière, retouche : valorisez l'image de votre institution à travers des visuels de qualité.",
+    objectives: [
+      "Maîtriser les réglages essentiels",
+      "Composer une image professionnelle",
+      "Réaliser des portraits institutionnels",
+      "Retoucher et livrer des visuels"
+    ],
+    program: [
+      "Module 1 — Bases techniques",
+      "Module 2 — Composition et cadrage",
+      "Module 3 — Portrait et reportage",
+      "Module 4 — Retouche et diffusion"
+    ]
+  },
+  {
+    id: 5,
+    title: "Organisation d'événements professionnels",
+    domain: "Événementiel",
+    status: "encours", statusLabel: "En cours",
+    date: "Session en cours", duration: "6 jours", location: "Ouagadougou",
+    price: "Sur demande",
+    trainer: "Équipe Mahmar Group",
+    audience: "Chargés d'organisation, assistants de direction, responsables logistiques",
+    description: "Planification, logistique, coordination : maîtrisez toutes les étapes d'un événement réussi.",
+    objectives: [
+      "Planifier un événement de A à Z",
+      "Gérer la logistique et les prestataires",
+      "Coordonner les équipes le jour J",
+      "Évaluer et capitaliser après événement"
+    ],
+    program: [
+      "Module 1 — Cadrage et objectifs",
+      "Module 2 — Planification et budget",
+      "Module 3 — Logistique et prestataires",
+      "Module 4 — Coordination le jour J",
+      "Module 5 — Bilan et capitalisation"
+    ]
+  },
+  {
+    id: 6,
+    title: "Inclusion & protection de l'enfance",
+    domain: "Social",
+    status: "avenir", statusLabel: "À venir",
+    date: "Session 2026", duration: "5 jours", location: "À préciser",
+    price: "Sur demande",
+    trainer: "Équipe Mahmar Group",
+    audience: "Acteurs institutionnels, travailleurs sociaux, ONG",
+    description: "Formation spécialisée pour les acteurs institutionnels engagés dans la protection des mineurs.",
+    objectives: [
+      "Comprendre les enjeux de protection",
+      "Identifier les situations à risque",
+      "Appliquer les procédures adaptées",
+      "Travailler en réseau"
+    ],
+    program: [
+      "Module 1 — Cadre juridique et institutionnel",
+      "Module 2 — Identification des risques",
+      "Module 3 — Procédures et protocoles",
+      "Module 4 — Approche inclusive",
+      "Module 5 — Travail en réseau"
+    ]
+  }
+];
+
+const SERVICES = [
+  { num:"01", icon:"🎓", title:"Formations Professionnelles", desc:"Un programme varié pour renforcer les compétences et accompagner le développement professionnel.",
+    items:["Communication & marketing","Inclusion & protection de l'enfance","Développement personnel & leadership","Formations spécialisées selon besoins"] },
+  { num:"02", icon:"🖨️", title:"Impression Tout Support", desc:"Des solutions d'impression professionnelles adaptées à tous vos types de supports.",
+    items:["Affiches, flyers, brochures, magazines","Bâches, panneaux, kakémonos","Cartes de visite, dépliants","Impression grand format & signalétique"] },
+  { num:"03", icon:"🎬", title:"Production Vidéo", desc:"Des contenus vidéo modernes et dynamiques répondant aux standards professionnels.",
+    items:["Capsules vidéo pour réseaux sociaux","Documentaires institutionnels","Spots publicitaires TV & digital","Montage & post-production"] },
+  { num:"04", icon:"📸", title:"Photographie Institutionnelle", desc:"Valorisez votre image à travers des visuels professionnels et soignés.",
+    items:["Reportages photo d'événements","Portraits professionnels","Couvertures médiatiques institutionnelles","Photographie pour supports de communication"] },
+  { num:"05", icon:"📅", title:"Planification d'Événements", desc:"Nous vous accompagnons dans l'organisation et la réussite de vos événements.",
+    items:["Conférences & séminaires","Ateliers de formation","Lancements de projets","Événements institutionnels & d'entreprise"] }
+];
+
+const REALISATIONS = [
+  { id:1, cat:"evenement",  catLabel:"Événement",   title:"Conférence institutionnelle",      img:"https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80" },
+  { id:2, cat:"video",      catLabel:"Vidéo",       title:"Documentaire institutionnel",      img:"https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80" },
+  { id:3, cat:"photo",      catLabel:"Photographie",title:"Reportage de lancement",           img:"https://images.unsplash.com/photo-1552168324-d612d77725e3?w=800&q=80" },
+  { id:4, cat:"impression", catLabel:"Impression",  title:"Campagne d'affichage",             img:"https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80" },
+  { id:5, cat:"formation",  catLabel:"Formation",   title:"Atelier communication digitale",   img:"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80" },
+  { id:6, cat:"evenement",  catLabel:"Événement",   title:"Séminaire de formation",           img:"https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80" }
+];
+
+// ---------- HELPERS ----------
+const $ = (s, ctx=document) => ctx.querySelector(s);
+const $$ = (s, ctx=document) => [...ctx.querySelectorAll(s)];
+const escapeHTML = (s='') => s.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+
+// ---------- TEMPLATES ----------
+const SERVICES_CARDS = (limit) => {
+  const list = limit ? SERVICES.slice(0, limit) : SERVICES;
+  return list.map(s => `
+    <article class="service-card">
+      <div class="service-card__num">${s.num}</div>
+      <div class="service-card__icon">${s.icon}</div>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+      <ul>${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+      <a href="#/contact" class="link-arrow">Demander un devis →</a>
+    </article>`).join('');
+};
+
+const CTA_CARD = `
+  <article class="service-card service-card--cta">
+    <h3>Un projet en tête ?</h3>
+    <p>Discutons de vos besoins et construisons ensemble une solution sur mesure.</p>
+    <a href="#/contact" class="btn btn--primary">Nous contacter</a>
+  </article>`;
+
+const FORMATION_CARD = (f) => `
+  <article class="formation-card">
+    <div class="formation-card__head">
+      <span class="formation-card__domain">${escapeHTML(f.domain)}</span>
+      <span class="status status--${f.status}">${escapeHTML(f.statusLabel)}</span>
+    </div>
+    <div class="formation-card__body">
+      <h3>${escapeHTML(f.title)}</h3>
+      <div class="formation-card__meta">
+        <span>📅 ${escapeHTML(f.date)}</span>
+        <span>⏱ ${escapeHTML(f.duration)}</span>
+        <span>📍 ${escapeHTML(f.location)}</span>
+      </div>
+      <p>${escapeHTML(f.description)}</p>
+      <a href="#/formation/${f.id}" class="btn btn--primary btn--sm">Voir la formation</a>
+    </div>
+  </article>`;
+
+// ---------- PAGES ----------
+function pageAccueil(){
+  return `
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">Institution · Communication · Excellence</span>
+        <h1>Accompagner vos projets vers <span class="text-orange">l'excellence</span>.</h1>
+        <p>Mahmar Group est une entreprise multidisciplinaire dédiée à la réalisation de vos projets professionnels et communicationnels : formations, impression, production vidéo, photographie et événementiel.</p>
+        <div class="hero__actions">
+          <a href="#/services" class="btn btn--primary">Découvrir nos services</a>
+          <a href="#/formations" class="btn btn--ghost">Voir les formations</a>
+        </div>
+        <ul class="hero__stats">
+          <li><strong>05</strong><span>Pôles d'expertise</span></li>
+          <li><strong>100%</strong><span>Satisfaction client</span></li>
+          <li><strong>24/7</strong><span>Accompagnement</span></li>
+        </ul>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__card">
+          <div class="hero__card-badge">Mahmar Group</div>
+          <h3>Une prise en charge complète</h3>
+          <p>De la conception à la livraison, une équipe passionnée au service de votre image.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about__inner">
+      <div class="about__visual">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80" alt="Équipe Mahmar Group">
+        <div class="about__floating">
+          <strong>Qualité</strong>
+          <span>Innovation · Satisfaction</span>
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="eyebrow">Qui sommes-nous ?</span>
+        <h2>Une vision moderne tournée vers <span class="text-orange">l'excellence</span>.</h2>
+        <p>Mahmar Group est une entreprise multidisciplinaire qui s'est donné pour mission d'accompagner les organisations, institutions et particuliers dans la réalisation de leurs projets professionnels et communicationnels.</p>
+        <p>Grâce à une équipe compétente, créative et passionnée, nous développons des solutions adaptées aux besoins spécifiques de chaque client, en alliant professionnalisme, expertise et sens du détail.</p>
+        <ul class="about__values">
+          <li><span>01</span> Qualité & satisfaction client</li>
+          <li><span>02</span> Innovation & créativité</li>
+          <li><span>03</span> Prise en charge complète</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Nos services</span>
+        <h2>Cinq pôles d'expertise complémentaires</h2>
+        <p>Un ensemble de services harmonieusement intégrés pour offrir une prise en charge totale.</p>
+      </div>
+      <div class="services__grid">${SERVICES_CARDS()}${CTA_CARD}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Formations</span>
+        <h2>Nos prochaines sessions</h2>
+        <p>Consultez les formations à venir et inscrivez-vous en quelques clics.</p>
+      </div>
+      <div class="formations__grid">
+        ${FORMATIONS.slice(0,3).map(FORMATION_CARD).join('')}
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="#/formations" class="btn btn--ghost">Voir toutes les formations</a>
+      </div>
+    </div>
+  </section>
+  `;
+}
+
+function pageApropos(){
+  return `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/">Accueil</a> / À propos</div>
+      <h1>À propos de Mahmar Group</h1>
+      <p>Une entreprise multidisciplinaire au service de vos projets communicationnels.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about__inner">
+      <div class="about__visual">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Équipe Mahmar Group">
+        <div class="about__floating">
+          <strong>Notre mission</strong>
+          <span>Accompagner vers l'excellence</span>
+        </div>
+      </div>
+      <div class="about__content">
+        <span class="eyebrow">Qui sommes-nous ?</span>
+        <h2>Une vision moderne tournée vers <span class="text-orange">l'excellence</span>.</h2>
+        <p>Mahmar Group est une entreprise multidisciplinaire qui s'est donné pour mission d'accompagner les organisations, institutions et particuliers dans la réalisation de leurs projets professionnels et communicationnels.</p>
+        <p>Forte d'une vision moderne et orientée vers l'excellence, l'entreprise met en avant une approche basée sur la qualité, l'innovation et la satisfaction client.</p>
+        <p>Grâce à une équipe compétente, créative et passionnée, Mahmar Group développe des solutions adaptées aux besoins spécifiques de chaque client, en alliant professionnalisme, expertise et sens du détail.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Nos piliers</span>
+        <h2>Mission · Vision · Valeurs</h2>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <div class="service-card__icon">🎯</div>
+          <h3>Notre mission</h3>
+          <p>Accompagner les institutions dans la réalisation de leurs projets communicationnels orientés vers l'excellence.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-card__icon">🔭</div>
+          <h3>Notre vision</h3>
+          <p>Devenir une référence en matière de communication institutionnelle et de formation professionnelle.</p>
+        </article>
+        <article class="service-card">
+          <div class="service-card__icon">💎</div>
+          <h3>Nos valeurs</h3>
+          <p>Qualité, innovation, satisfaction client, professionnalisme, sens du détail et prise en charge complète.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Nos domaines</span>
+        <h2>Domaines d'intervention</h2>
+      </div>
+      <div class="services__grid">${SERVICES_CARDS()}</div>
+    </div>
+  </section>
+  `;
+}
+
+function pageServices(){
+  return `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/">Accueil</a> / Services</div>
+      <h1>Nos services</h1>
+      <p>Cinq pôles d'expertise complémentaires pour une prise en charge totale de vos projets.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="services__grid">${SERVICES_CARDS()}${CTA_CARD}</div>
+    </div>
+  </section>
+  `;
+}
+
+function pageFormations(){
+  return `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/">Accueil</a> / Formations</div>
+      <h1>Nos formations</h1>
+      <p>Consultez les formations à venir et inscrivez-vous en quelques clics.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="formations__filters">
+        <button class="filter active" data-filter="all">Toutes</button>
+        <button class="filter" data-filter="ouverte">Inscriptions ouvertes</button>
+        <button class="filter" data-filter="avenir">À venir</button>
+        <button class="filter" data-filter="encours">En cours</button>
+        <button class="filter" data-filter="terminee">Terminées</button>
+      </div>
+      <div class="formations__grid" id="formationsGrid"></div>
+    </div>
+  </section>
+  `;
+}
+
+function pageFormationDetail(id){
+  const f = FORMATIONS.find(x => x.id === Number(id));
+  if(!f) return `<section class="section"><div class="container"><p>Formation introuvable. <a href="#/formations" class="link-arrow">Retour au catalogue</a></p></div></section>`;
+
+  return `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/">Accueil</a> / <a href="#/formations">Formations</a> / ${escapeHTML(f.domain)}</div>
+      <h1>${escapeHTML(f.title)}</h1>
+      <p>${escapeHTML(f.description)}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container detail__grid">
+      <div class="detail__content">
+        <span class="status status--${f.status}" style="margin-bottom:16px;display:inline-block">${escapeHTML(f.statusLabel)}</span>
+        <h2>Présentation</h2>
+        <p>${escapeHTML(f.description)}</p>
+
+        <h3>Objectifs pédagogiques</h3>
+        <ul>${f.objectives.map(o=>`<li>${escapeHTML(o)}</li>`).join('')}</ul>
+
+        <h3>Programme détaillé</h3>
+        <ul>${f.program.map(p=>`<li>${escapeHTML(p)}</li>`).join('')}</ul>
+
+        <h3>Public concerné</h3>
+        <p>${escapeHTML(f.audience)}</p>
+
+        <h3>Formateur</h3>
+        <p>${escapeHTML(f.trainer)}</p>
+      </div>
+
+      <aside class="detail__side">
+        <h4>Informations pratiques</h4>
+        <div class="meta-row"><span>Date</span><span>${escapeHTML(f.date)}</span></div>
+        <div class="meta-row"><span>Durée</span><span>${escapeHTML(f.duration)}</span></div>
+        <div class="meta-row"><span>Lieu</span><span>${escapeHTML(f.location)}</span></div>
+        <div class="meta-row"><span>Tarif</span><span>${escapeHTML(f.price)}</span></div>
+        <a href="#/contact" class="btn btn--primary btn--full">S'inscrire / Demander infos</a>
+        <a href="https://wa.me/22661040464?text=${encodeURIComponent('Bonjour, je souhaite des informations sur la formation : ' + f.title)}" target="_blank" rel="noopener" class="btn btn--ghost btn--full" style="margin-top:10px">WhatsApp</a>
+      </aside>
+    </div>
+  </section>
+  `;
+}
+
+function pageRealisations(){
+  return `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/">Accueil</a> / Réalisations</div>
+      <h1>Nos réalisations</h1>
+      <p>Découvrez concrètement notre savoir-faire à travers nos projets.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="realisations__filters">
+        <button class="filter active" data-rfilter="all">Tout</button>
+        <button class="filter" data-rfilter="evenement">Événements</button>
+        <button class="filter" data-rfilter="video">Vidéos</button>
+        <button class="filter" data-rfilter="photo">Photographies</button>
+        <button class="filter" data-rfilter="impression">Impressions</button>
+        <button class="filter" data-rfilter="formation">Formations</button>
+      </div>
+      <div class="realisations__grid" id="realisationsGrid"></div>
+    </div>
+  </section>
+  `;
+}
+
+function pageContact(){
+  return `
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="#/">Accueil</a> / Contact</div>
+      <h1>Contactez-nous</h1>
+      <p>Notre équipe vous répond dans les plus brefs délais.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <span class="eyebrow">Contact</span>
+        <h2>Parlons de votre projet.</h2>
+        <p>Un devis, une question, une demande de formation ? Écrivez-nous.</p>
+        <ul class="contact__list">
+          <li>
+            <span class="ico">📞</span>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:+22661040464">+226 61 04 04 64</a><br>
+              <a href="tel:54851931">54 85 19 31</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:mahmargroup@gmail.com">mahmargroup@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico">💬</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/22661040464" target="_blank" rel="noopener">Discuter maintenant</a>
+            </div>
+          </li>
+          <li>
+            <span class="ico">📍</span>
+            <div>
+              <strong>Localisation</strong>
+              <span style="font-size:.92rem;color:var(--gray)">Burkina Faso</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact__form" id="contactForm">
+        <div class="field">
+          <label for="name">Nom complet *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Téléphone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="subject">Service concerné</label>
+          <select id="subject" name="subject">
+            <option>Formations professionnelles</option>
+            <option>Impression tout support</option>
+            <option>Production vidéo</option>
+            <option>Photographie institutionnelle</option>
+            <option>Planification d'événements</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Envoyer la demande</button>
+        <p class="form-status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+  `;
+}
+
+// ---------- RENDER FORMATIONS ----------
+function renderFormationsGrid(filter='all'){
+  const grid = $('#formationsGrid');
+  if(!grid) return;
+  const list = filter === 'all' ? FORMATIONS : FORMATIONS.filter(f => f.status === filter);
+  if(!list.length){ grid.innerHTML = `<p class="empty-msg">Aucune formation pour ce filtre.</p>`; return; }
+  grid.innerHTML = list.map(FORMATION_CARD).join('');
+}
+
+// ---------- RENDER REALISATIONS ----------
+function renderRealisationsGrid(filter='all'){
+  const grid = $('#realisationsGrid');
+  if(!grid) return;
+  const list = filter === 'all' ? REALISATIONS : REALISATIONS.filter(r => r.cat === filter);
+  if(!list.length){ grid.innerHTML = `<p class="empty-msg">Aucune réalisation pour ce filtre.</p>`; return; }
+  grid.innerHTML = list.map(r => `
+    <article class="realisation-card" data-cat="${r.cat}">
+      <img src="${r.img}" alt="${escapeHTML(r.title)}" loading="lazy">
+      <div class="realisation-card__overlay">
+        <span class="realisation-card__cat">${escapeHTML(r.catLabel)}</span>
+        <h3>${escapeHTML(r.title)}</h3>
+      </div>
+    </article>`).join('');
+}
+
+// ---------- ROUTER ----------
+const ROUTES = {
+  'accueil':      { title:"Mahmar Group — Accueil",         render: pageAccueil,          nav:'accueil',     after: null },
+  'a-propos':     { title:"Mahmar Group — À propos",        render: pageApropos,          nav:'apropos',     after: null },
+  'services':     { title:"Mahmar Group — Services",        render: pageServices,         nav:'services',    after: null },
+  'formations':   { title:"Mahmar Group — Formations",      render: pageFormations,       nav:'formations',  after: ()=>renderFormationsGrid('all') },
+  'realisations': { title:"Mahmar Group — Réalisations",    render: pageRealisations,     nav:'realisations',after: ()=>renderRealisationsGrid('all') },
+  'contact':      { title:"Mahmar Group — Contact",         render: pageContact,          nav:'contact',     after: bindContactForm }
+};
+
+function parseHash(){
+  const h = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+  return { route: h[0] || 'accueil', param: h[1] || null };
+}
+
+function router(){
+  const { route, param } = parseHash();
+  const app = $('#app');
+  let html = '';
+  let meta;
+
+  if(route === 'formation' && param){
+    html = pageFormationDetail(param);
+    meta = { title:"Mahmar Group — Formation", nav:'formations' };
+  } else if(ROUTES[route]){
+    html = ROUTES[route].render();
+    meta = ROUTES[route];
+  } else {
+    html = ROUTES['accueil'].render();
+    meta = ROUTES['accueil'];
+  }
+
+  document.title = meta.title;
+  app.innerHTML = html;
+  window.scrollTo({ top: 0, behavior: 'instant' });
+
+  // navigation active
+  $$('.nav a').forEach(a => a.classList.toggle('active', a.dataset.nav === meta.nav));
+  $('#nav').classList.remove('open');
+
+  // after-render hooks
+  if(route === 'formation' && param) return;
+  if(meta.after) meta.after();
+}
+
+// ---------- CONTACT FORM ----------
+function bindContactForm(){
+  const form = $('#contactForm');
+  if(!form) return;
+  const status = $('#formStatus');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    if(!data.name || !data.email || !data.message){
+      status.textContent = "Veuillez remplir les champs obligatoires.";
+      status.className = "form-status error";
+      return;
+    }
+    // TODO: brancher Formspree / Web3Forms / Firebase ici
+    console.log('Nouvelle demande :', data);
+
+    // Option bonus : ouvrir WhatsApp avec le message prérempli
+    // const msg = encodeURIComponent(`Bonjour Mahmar Group, je suis ${data.name}. Service : ${data.subject}. ${data.message}`);
+    // window.open(`https://wa.me/22661040464?text=${msg}`, '_blank');
+
+    status.textContent = "Merci ! Votre demande a bien été envoyée. Nous vous répondrons rapidement.";
+    status.className = "form-status success";
+    form.reset();
+  });
+}
+
+// ---------- EVENT DELEGATION ----------
+document.addEventListener('click', (e) => {
+  const f = e.target.closest('.filter[data-filter]');
+  if(f){
+    $$('.filter[data-filter]').forEach(b => b.classList.remove('active'));
+    f.classList.add('active');
+    renderFormationsGrid(f.dataset.filter);
+  }
+  const rf = e.target.closest('.filter[data-rfilter]');
+  if(rf){
+    $$('.filter[data-rfilter]').forEach(b => b.classList.remove('active'));
+    rf.classList.add('active');
+    renderRealisationsGrid(rf.dataset.rfilter);
+  }
+});
+
+// ---------- INIT ----------
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 20));
+
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
+burger.addEventListener('click', () => nav.classList.toggle('open'));
+
+window.addEventListener('hashchange', router);
+window.addEventListener('DOMContentLoaded', router);
+router();
+</script>
+
+</body>
+</html>
